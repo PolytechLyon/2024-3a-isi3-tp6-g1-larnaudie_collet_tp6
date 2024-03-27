@@ -1,5 +1,6 @@
 package fr.polytech.sim.cycling;
 
+import fr.polytech.sim.Clock;
 import fr.polytech.sim.Simulation;
 import fr.polytech.sim.log.FileLogger;
 import fr.polytech.sim.log.Logger;
