@@ -11,11 +11,13 @@ Pour s'assurer qu'il n'y a qu'une seule clock, on va appliquer le patron Singlet
 et en créant l'instance de cette manière : `private static final Clock instance = new Clock();`
 on s'assure qu'il n'y a qu'une seule instance. De plus, dans la classe Wheel, pour avoir notre variable Clock on ne peut plus faire `new clock()` donc on fait simplement `getInstance()`
 ## Exercices 4
-
+Les classes `Bike` et `Wheel` sont dans le même package.
+Il y a une dépendance cyclique entre les 2 ce qui est un problème car c'est un anti-patron. Wheel utilise la méthode `getPush()` de `Bike` or, cette fonctionnalité est présente dans Vehicle qui est la classe abstraite, donc pour être encore plus générique, on pourrait utiliser directement Vehicle à la place de Bike dans la classe Wheel.
 ## Exercices 5
-
+Nous avons utilisé le patron de méthode pour centraliser la méthode log dans la classe abstraite NamedLogger. Les sous-classes FileLogger et ConsoleLogger implémentent une méthode abstraite `logFinalMessage` pour spécifier comment le message final doit être traité ce qui évite ainsi les doublons
 ## Exercices 6
-
+On a créé une classe `LoggerFactory` qui va forcer à utiliser le console log car dans le logger factory, on crée une méthode getLog qui instancie un nouveau `ConsoleLogger`, de plus on a retiré le "public" dans le constructeur de `ConsoleLogger` pour créer une sorte de "package private" et que ca ne puisse être que la fabrique qui créer des nouvelles instances de logger.
+La différence avec singleton pour ce patron est qu'on veut plusieurs instances de log car sinon on en créer qu'une on ne pourrait pas savoir où est l'erreur dans le code.
 ## Exercices 7
 
 ## Exercices 8
