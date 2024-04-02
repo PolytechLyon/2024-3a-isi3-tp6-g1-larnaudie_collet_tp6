@@ -21,7 +21,7 @@ public class TimestampedLoggerDecorator implements Logger{
     @Override
     public void log(String format, Object... args) {
         String timestamp = dateFormat.format(new Date());
-        logger.log(timestamp + "  " + format,args);
+        logger.log(timestamp + " " + format,args);
     }
 
 }

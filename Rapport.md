@@ -19,7 +19,8 @@ Nous avons utilisé le patron de méthode pour centraliser la méthode log dans 
 On a créé une classe `LoggerFactory` qui va forcer à utiliser le console log car dans le logger factory, on crée une méthode getLog qui instancie un nouveau `ConsoleLogger`, de plus on a retiré le "public" dans le constructeur de `ConsoleLogger` pour créer une sorte de "package private" et que ca ne puisse être que la fabrique qui créer des nouvelles instances de logger.
 La différence avec singleton pour ce patron est qu'on veut plusieurs instances de log car sinon on en créer qu'une on ne pourrait pas savoir où est l'erreur dans le code.
 ## Exercices 8
-La classe `Context` suit 
+La classe `Context` suit le pattern Façade car il va "brider" toutes les fonctionnalités possibles en utilsiant seulement inject.
+Pour créer un nouveau Bike dans BikeSimulator, on va simplement écrire : `Context.inject(Bike.class)`. Inject est codé pour ne lire qu'une seule ligne dans `fr.polytech.sim.cycling.Bike` donc si on écrit plusieurs lignes, il ne lira que la première. Chaque ligne correspond à quelle classe on veut injecter.
 ## Exercices 9
 
 
