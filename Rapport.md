@@ -22,5 +22,4 @@ La différence avec singleton pour ce patron est qu'on veut plusieurs instances 
 La classe `Context` suit le pattern Façade car il va "brider" toutes les fonctionnalités possibles en utilisiant seulement load.
 Pour créer un nouveau Bike dans BikeSimulator, on va simplement écrire : `Context.inject(Bike.class)`. Inject est codé pour ne lire qu'une seule ligne dans `fr.polytech.sim.cycling.Bike` donc si on écrit plusieurs lignes, il ne lira que la première. Chaque ligne correspond à quelle classe on veut injecter.
 ## Exercices 9
-
-
+Comme la méthode injectAll() renvoie un Iterator, on va simplement return `ServiceLoader.load(klass).iterator()` et dans BikeSimulator tant que injectAll() a un élement suivant, on va continuer de print en utilisant l'itérateur retourné par injectAll puis en faisant .next() 

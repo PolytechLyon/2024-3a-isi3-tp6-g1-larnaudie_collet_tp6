@@ -17,9 +17,9 @@ public class BikeSimulator implements Simulation {
 
     public void run() {
         //Bike bike = Context.inject(Bike.class);
-        Iterator<Bike> AllBike = Context.injectAll(Bike.class);
-        while(AllBike.hasNext()) {
-            Bike bike = AllBike.next();
+        Iterator<Bike> allBike = Context.injectAll(Bike.class);
+        while(allBike.hasNext()) {
+            Bike bike = allBike.next();
             this.logger.log("Bike's speed %.2f Km/h.", bike.getVelocity());
             this.logger.log("Bike's mass %.2f Kg.", bike.getMass());
         }
