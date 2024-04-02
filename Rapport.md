@@ -18,8 +18,8 @@ Nous avons utilisé le patron de méthode pour centraliser la méthode log dans 
 ## Exercices 6
 On a créé une classe `LoggerFactory` qui va forcer à utiliser le console log car dans le logger factory, on crée une méthode getLog qui instancie un nouveau `ConsoleLogger`, de plus on a retiré le "public" dans le constructeur de `ConsoleLogger` pour créer une sorte de "package private" et que ca ne puisse être que la fabrique qui créer des nouvelles instances de logger.
 La différence avec singleton pour ce patron est qu'on veut plusieurs instances de log car sinon on en créer qu'une on ne pourrait pas savoir où est l'erreur dans le code.
-## Exercices 7
-
 ## Exercices 8
+La classe `Context` suit 
+## Exercices 9
 
 
